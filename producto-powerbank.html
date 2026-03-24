@@ -2,33 +2,48 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Power Bank - CUCHITEC</meta>
+<title>CUCHITEC - Power Bank</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
   margin:0;
-  padding:20px;
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
 }
 
-.contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+/* CONTENEDOR */
+.container {
+  display:flex;
+  flex-wrap:wrap;
+  gap:40px;
+  padding:30px;
+  animation: fadeIn 0.8s ease;
 }
 
-/* IMÁGENES */
-.imagenes {
+/* ANIMACIÓN ENTRADA */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* GALERÍA */
+.galeria {
   flex:1;
 }
 
-.imagenes img {
+.galeria img {
   width:100%;
   border-radius:10px;
   margin-bottom:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* HOVER IMAGEN */
+.galeria img:hover {
+  transform: scale(1.05);
 }
 
 /* INFO */
@@ -36,20 +51,47 @@ body {
   flex:1;
 }
 
-.precio {
-  color:#22c55e;
-  font-size:24px;
+.info h1 {
+  font-size:28px;
 }
 
+/* PRECIO */
+.precio {
+  color:#22c55e;
+  font-size:30px;
+  font-weight:bold;
+  margin:10px 0;
+}
+
+/* BOTÓN */
 .btn {
   display:block;
   margin-top:20px;
   padding:15px;
-  background:#22c55e;
+  background: linear-gradient(90deg,#22c55e,#0ea5e9);
   color:black;
   text-align:center;
   border-radius:10px;
   text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+/* HOVER BOTÓN */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* DESCRIPCIÓN */
+.descripcion {
+  padding:30px;
+  border-top:1px solid #334155;
+  animation: fadeIn 1s ease;
+}
+
+/* TITULO */
+.descripcion h2 {
+  margin-bottom:10px;
 }
 </style>
 
@@ -57,32 +99,46 @@ body {
 
 <body>
 
-<h1>Power Bank 🔋</h1>
+<div class="container">
 
-<div class="contenedor">
-
-  <!-- 🖼️ 1. IMÁGENES -->
-  <div class="imagenes">
+  <!-- 🖼️ IMÁGENES -->
+  <div class="galeria">
     <img src="https://www.peru-smart.com/wp-content/uploads/2024/12/CARG1005NEGRO_1.jpg">
-    <img src="https://via.placeholder.com/300">
-    <img src="https://via.placeholder.com/300">
+    <img src="https://via.placeholder.com/400">
+    <img src="https://via.placeholder.com/400">
   </div>
 
-  <!-- 📄 2. DESCRIPCIÓN -->
+  <!-- 📄 INFO -->
   <div class="info">
+    <h1>Power Bank 🔋</h1>
+
     <p class="precio">S/105</p>
 
-    <p>Power Bank de alta capacidad 🔋</p>
-    <p>✔ Carga rápida</p>
-    <p>✔ Ideal para revender</p>
-    <p>✔ Stock disponible</p>
+    <p>⚡ Carga rápida</p>
+    <p>🔋 Alta capacidad</p>
+    <p>📦 Ideal para revender</p>
+    <p>🚚 Envíos a todo Perú</p>
 
-    <!-- 💳 3. MÉTODO DE COMPRA -->
-    <a class="btn" href="https://wa.me/51TU NUMERO">
-      Comprar ahora
+    <!-- 🛒 BOTÓN WHATSAPP -->
+    <a class="btn" href="https://wa.me/51929682090" target="_blank">
+      Comprar por WhatsApp
     </a>
-
   </div>
+
+</div>
+
+<!-- 📦 DESCRIPCIÓN -->
+<div class="descripcion">
+
+  <h2>Descripción del producto</h2>
+
+  <p>
+    Este Power Bank ofrece carga rápida y segura para todo tipo de dispositivos.
+  </p>
+
+  <p>
+    Perfecto para clientes que buscan calidad y también para reventa.
+  </p>
 
 </div>
 
